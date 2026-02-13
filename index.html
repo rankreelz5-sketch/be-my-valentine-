@@ -120,18 +120,20 @@
 
 <div id="popup">YANNNN DAMHIN MO ANG AKING PAGMAMAHAL BEYBEH💖</div>
 
+<!-- Sounds -->
 <audio id="clickSound" src="https://www.soundjay.com/buttons/sounds/button-16.mp3"></audio>
-  
+<audio id="yesSong" src="Leonora.mp3"></audio>
+
 <script>
 let nahh = document.getElementById('nahh');
 let yes = document.getElementById('yes');
 let popup = document.getElementById('popup');
 let loader = document.getElementById('loader');
 let clickSound = document.getElementById('clickSound');
-let yaySound = document.getElementById('yaySound');
+let yesSong = document.getElementById('yesSong');
 
 let nahhTexts = ["NAHH", "Sure ka na ba?", "SUREE?!", "Sure na ba talaga?", "ahh ayaw mo mag yes ha", "ISA!", "DALAWAA!", "PLEASE BABY OH🥺"];
-let clickCount = 15;
+let clickCount = 0;
 
 // Teleport effect for Nahh
 nahh.addEventListener('mouseover', () => {
@@ -146,7 +148,7 @@ nahh.addEventListener('mouseover', () => {
   nahh.style.position = 'absolute';
   nahh.style.left = x + 'px';
   nahh.style.top = y + 'px';
-<audio id="yesSong" src="Leonora.mp3"></audio>
+
   // Shake YES button
   yes.style.transition = '0.1s';
   yes.style.transform = `scale(${1 + clickCount*0.1}) rotate(${Math.random()*20-10}deg)`;
@@ -161,7 +163,7 @@ yes.addEventListener('click', () => {
   setTimeout(() => {
     loader.style.display = 'none';
     popup.style.display = 'block';
-    document.getElementById('yesSong').play(); // plays Leonora
+    yesSong.play(); // plays Leonora
     createHearts();
   }, 800);
 });
