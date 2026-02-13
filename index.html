@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valentine 💖</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;700&display=swap');
+
+  body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(120deg, #ff9ccf, #ffc1c1);
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+  }
+
+  #container {
+    text-align: center;
+  }
+
+  h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.2rem;
+    color: #fff;
+    margin-bottom: 30px;
+  }
+
+  button {
+    padding: 15px 40px;
+    margin: 10px;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+  }
+
+  #opkorsBtn {
+    background-color: #ff6f91;
+    color: white;
+  }
+
+  #nahhBtn {
+    background-color: #6fb1fc;
+    color: white;
+  }
+
+  .hidden {
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+<div id="container">
+  <h1 id="message">Pag ako walang nahanap.... ikaw nalang kaya?</h1>
+  <button id="opkorsBtn">OPKORS</button>
+  <button id="nahhBtn">NAHH</button>
+</div>
+
+<audio id="song" src="Leonora.mp3"></audio>
+
+<script>
+  const opkorsBtn = document.getElementById('opkorsBtn');
+  const nahhBtn = document.getElementById('nahhBtn');
+  const message = document.getElementById('message');
+  const song = document.getElementById('song');
+
+  let nahhPhrases = [
+    "Sure ka na ba?",
+    "SUREE?!",
+    "Sure na ba talaga?",
+    "ahh ayaw mo mag yes ha",
+    "ISA!",
+    "DALAWAA!",
+    "PLEASE BABY OH🥺"
+  ];
+  let nahhIndex = 0;
+
+  let opkorsSize = 1; // scale multiplier
+
+  nahhBtn.addEventListener('click', () => {
+    nahhBtn.textContent = nahhPhrases[nahhIndex];
+    nahhIndex = (nahhIndex + 1) % nahhPhrases.length;
+    // Grow OPKORS every time NAHH is tapped
+    opkorsSize += 0.2;
+    opkorsBtn.style.transform = `scale(${opkorsSize})`;
+  });
+
+  opkorsBtn.addEventListener('click', () => {
+    song.play();
+    // If OPKORS button is really big, go to love page
+    if (opkorsSize >= 4) {
+      document.body.innerHTML = `
+        <div style="display:flex;justify-content:center;align-items:center;height:100vh;background:linear-gradient(120deg, #ff9ccf, #ffc1c1);">
+          <h1 style="font-family: 'Pacifico', cursive; font-size:3rem; text-align:center; color:white;">
+            DAMHIN MO ANG PAGMAMAHAL KO BEYBE LABYUU😙
+          </h1>
+        </div>
+      `;
+    }
+  });
+</script>
+
+</body>
+</html>
