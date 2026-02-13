@@ -118,11 +118,10 @@
 <button id="yes" class="btn">Yes</button>
 <button id="nahh" class="btn">Nahh</button>
 
-<div id="popup">Yay! You made my day 💖</div>
+<div id="popup">YANNNN DAMHIN MO ANG AKING PAGMAMAHAL BEYBEH💖</div>
 
 <audio id="clickSound" src="https://www.soundjay.com/buttons/sounds/button-16.mp3"></audio>
-<audio id="yaySound" src="https://www.soundjay.com/human/sounds/applause-8.mp3"></audio>
-
+  
 <script>
 let nahh = document.getElementById('nahh');
 let yes = document.getElementById('yes');
@@ -131,8 +130,8 @@ let loader = document.getElementById('loader');
 let clickSound = document.getElementById('clickSound');
 let yaySound = document.getElementById('yaySound');
 
-let nahhTexts = ["NAHH", "Sure ka na ba?", "SUREE?!", "Sure na ba talaga?"];
-let clickCount = 0;
+let nahhTexts = ["NAHH", "Sure ka na ba?", "SUREE?!", "Sure na ba talaga?", "ahh ayaw mo mag yes ha", "ISA!", "DALAWAA!", "PLEASE BABY OH🥺"];
+let clickCount = 15;
 
 // Teleport effect for Nahh
 nahh.addEventListener('mouseover', () => {
@@ -162,8 +161,7 @@ yes.addEventListener('click', () => {
   setTimeout(() => {
     loader.style.display = 'none';
     popup.style.display = 'block';
-    yaySound.play();
-    createHearts();
+createHearts();
   }, 800);
 });
 
