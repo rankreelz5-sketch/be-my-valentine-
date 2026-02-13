@@ -114,7 +114,7 @@
 
 <div id="loader">Loading… 💌</div>
 
-<h1>Can you be my Valentine? 💖</h1>
+<h1>pag ako walang nahanap.. ikaw nalang kaya? 💖</h1>
 <button id="yes" class="btn">Yes</button>
 <button id="nahh" class="btn">Nahh</button>
 
@@ -146,7 +146,7 @@ nahh.addEventListener('mouseover', () => {
   nahh.style.position = 'absolute';
   nahh.style.left = x + 'px';
   nahh.style.top = y + 'px';
-
+<audio id="yesSong" src="Leonora.mp3"></audio>
   // Shake YES button
   yes.style.transition = '0.1s';
   yes.style.transform = `scale(${1 + clickCount*0.1}) rotate(${Math.random()*20-10}deg)`;
@@ -161,7 +161,8 @@ yes.addEventListener('click', () => {
   setTimeout(() => {
     loader.style.display = 'none';
     popup.style.display = 'block';
-createHearts();
+    document.getElementById('yesSong').play(); // plays Leonora
+    createHearts();
   }, 800);
 });
 
